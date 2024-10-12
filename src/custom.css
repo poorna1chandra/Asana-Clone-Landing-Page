@@ -1,0 +1,35 @@
+.social .twitter:hover svg path,
+.social .linkedin:hover svg path,
+.social .instagram:hover svg path,
+.social .facebook:hover svg path,
+.social .youtube:hover svg path {
+  fill: black; 
+}
+
+.social .twitter:hover,
+.social .linkedin:hover,
+.social .instagram:hover,
+.social .facebook:hover,
+.social .youtube:hover {
+  background-color: white; 
+}
+
+.langu:hover .globe2 {
+  fill: white;
+
+}
+
+.langu:hover .langutext button{
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}

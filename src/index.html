@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asana Clone</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    
+    <header class="headCheck sticky top-0 z-10 bg-white">
+        <div class="navi h-[56px] flex items-center ml-[6%] mr-[6%]">
+            <div class="lef mt-[6px] mr-[25px] w-[120px] h-[25px] ">
+                <svg width="112" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="asana-logo-title"><title id="asana-logo-title">Asana Home</title><path class="fill-[#690031]" d="M108.202 16.703c.067.765.679 1.739 1.74 1.739h.62a.44.44 0 0 0 .438-.438V4.359h-.003a.437.437 0 0 0-.435-.414h-1.922a.437.437 0 0 0-.435.414h-.003v1.109c-1.178-1.452-3.035-2.055-4.897-2.055a7.667 7.667 0 0 0-7.665 7.67 7.668 7.668 0 0 0 7.665 7.672c1.862 0 3.892-.723 4.897-2.054v.002Zm-4.89-.633c-2.692 0-4.874-2.232-4.874-4.986 0-2.754 2.182-4.986 4.874-4.986 2.693 0 4.875 2.232 4.875 4.986 0 2.754-2.182 4.986-4.875 4.986ZM93.21 17.172v-7.06c0-3.981-2.51-6.666-6.51-6.666-1.91 0-3.476 1.105-4.029 2.055-.12-.743-.513-1.523-1.735-1.523h-.622a.439.439 0 0 0-.438.438v13.646h.003c.012.23.203.414.435.414h1.923c.029 0 .058-.004.086-.009.013-.002.024-.008.037-.011l.043-.013c.017-.008.032-.017.048-.026l.024-.013a.44.44 0 0 0 .053-.043l.01-.007a.434.434 0 0 0 .134-.292h.002v-8.06a3.87 3.87 0 0 1 3.868-3.871 3.87 3.87 0 0 1 3.868 3.87l.001 6.738v-.002l.002.018v1.307h.002c.013.23.203.414.435.414h1.923a.45.45 0 0 0 .086-.009c.011-.002.022-.007.033-.01.016-.004.032-.008.047-.014.016-.007.03-.016.045-.024l.027-.015a.49.49 0 0 0 .05-.04l.013-.01a.452.452 0 0 0 .049-.057l.003-.004a.434.434 0 0 0 .082-.23h.003v-.891ZM73.188 16.703c.067.765.68 1.739 1.74 1.739h.62c.24 0 .437-.197.437-.438V4.359h-.002a.438.438 0 0 0-.435-.414h-1.923a.438.438 0 0 0-.435.414h-.002v1.109c-1.178-1.452-3.035-2.055-4.898-2.055a7.667 7.667 0 0 0-7.664 7.67c0 4.237 3.431 7.672 7.664 7.672 1.863 0 3.892-.723 4.898-2.054v.002Zm-4.89-.633c-2.692 0-4.875-2.232-4.875-4.986 0-2.754 2.183-4.986 4.875-4.986s4.874 2.232 4.874 4.986c0 2.754-2.182 4.986-4.874 4.986ZM49.257 14.748c1.283.89 2.684 1.322 4.03 1.322 1.283 0 2.609-.665 2.609-1.823 0-1.546-2.89-1.787-4.705-2.405-1.815-.617-3.379-1.893-3.379-3.96 0-3.163 2.816-4.47 5.444-4.47 1.665 0 3.383.55 4.497 1.338.384.29.15.625.15.625l-1.063 1.52c-.12.17-.328.318-.628.133s-1.352-.93-2.956-.93c-1.603 0-2.57.74-2.57 1.66 0 1.1 1.256 1.447 2.727 1.823 2.562.691 5.357 1.522 5.357 4.666 0 2.786-2.604 4.508-5.483 4.508-2.181 0-4.038-.622-5.596-1.766-.324-.325-.098-.627-.098-.627l1.058-1.512c.216-.282.487-.184.606-.102ZM41.866 16.703c.068.765.68 1.739 1.74 1.739h.62a.44.44 0 0 0 .438-.438V4.359h-.003a.437.437 0 0 0-.435-.414h-1.922a.438.438 0 0 0-.435.414h-.003v1.109c-1.178-1.452-3.035-2.055-4.897-2.055a7.668 7.668 0 0 0-7.665 7.67c0 4.237 3.432 7.672 7.665 7.672 1.862 0 3.892-.723 4.897-2.054v.002Zm-4.89-.633c-2.692 0-4.874-2.232-4.874-4.986 0-2.754 2.182-4.986 4.875-4.986 2.692 0 4.874 2.232 4.874 4.986 0 2.754-2.182 4.986-4.874 4.986Z" fill="#0D0E10"></path><path class="_nav_logo-link__asana-icon__H3Xqa" d="M18.559 11.605a5.158 5.158 0 1 0 0 10.317 5.158 5.158 0 0 0 0-10.317Zm-13.401.001a5.158 5.158 0 1 0 0 10.315 5.158 5.158 0 0 0 0-10.315Zm11.858-6.448a5.158 5.158 0 1 1-10.316 0 5.158 5.158 0 0 1 10.316 0Z" fill="#F06A6A"></path></svg>
+            </div>
+            <div class="rigt flex col justify-end xl:justify-between w-[calc(100%-100px)] h-[100%] items-center">
+                <div class="log font-sans font-[700] text-[14px] text-[#727272] hidden xl:flex ">
+                    <ul class="flex gap-5 items-center">
+                        <li class="flex items-center hover:text-black">Features <img src="../assets/img/down-arrow.png" width="25px" alt=""></li>
+                        <li class="flex items-center hover:text-black">Solutions <img src="../assets/img/down-arrow.png" width="25px" alt=""></li>
+                        <li class="flex items-center hover:text-black">Resources <img src="../assets/img/down-arrow.png" width="25px" alt=""></li>
+                        <li class="items-center hover:text-black">Enterprise </li>
+                        
+                        <li class="items-center hover:text-black">Pricing </li>
+                    </ul>
+                </div>
+
+                <div class="butons flex gap-5 items-center text-[#727272]">
+                    <div class="globe pr-5 border-r hidden sm:flex border-solid">
+                        <button class="searchBtn align-middle">
+                        <svg class="_nav_language-selector__icon__Ua_c5" width="20px" height="28px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="fill-[#727272] hover:fill-black" d="M9.5,0 C4.275,0 0,4.275 0,9.5 C0,14.725 4.275,19 9.5,19 C14.725,19 19,14.725 19,9.5 C19,4.275 14.725,0 9.5,0 Z M16.98125,5.9375 L13.359375,5.9375 C13.0625,4.096875 12.528125,2.553125 11.815625,1.54375 C14.13125,2.196875 15.971875,3.8 16.98125,5.9375 Z M12.46875,9.5 C12.46875,10.33125 12.409375,11.103125 12.35,11.875 L6.65,11.875 C6.590625,11.103125 6.53125,10.33125 6.53125,9.5 C6.53125,8.66875 6.590625,7.896875 6.65,7.125 L12.35,7.125 C12.409375,7.896875 12.46875,8.66875 12.46875,9.5 Z M9.5,17.8125 C8.490625,17.8125 7.3625,15.971875 6.828125,13.0625 L12.171875,13.0625 C11.6375,15.971875 10.509375,17.8125 9.5,17.8125 Z M6.828125,5.9375 C7.3625,3.028125 8.490625,1.1875 9.5,1.1875 C10.509375,1.1875 11.6375,3.028125 12.171875,5.9375 L6.828125,5.9375 Z M7.184375,1.54375 C6.471875,2.553125 5.9375,4.096875 5.640625,5.9375 L2.01875,5.9375 C3.028125,3.8 4.86875,2.196875 7.184375,1.54375 Z M1.54375,7.125 L5.4625,7.125 C5.403125,7.896875 5.34375,8.66875 5.34375,9.5 C5.34375,10.33125 5.403125,11.103125 5.4625,11.875 L1.54375,11.875 C1.30625,11.103125 1.1875,10.33125 1.1875,9.5 C1.1875,8.66875 1.30625,7.896875 1.54375,7.125 Z M2.01875,13.0625 L5.640625,13.0625 C5.9375,14.903125 6.471875,16.446875 7.184375,17.45625 C4.86875,16.803125 3.028125,15.2 2.01875,13.0625 Z M11.815625,17.45625 C12.528125,16.3875 13.0625,14.903125 13.359375,13.0625 L16.98125,13.0625 C15.971875,15.2 14.13125,16.803125 11.815625,17.45625 Z M17.45625,11.875 L13.5375,11.875 C13.596875,11.103125 13.65625,10.33125 13.65625,9.5 C13.65625,8.66875 13.596875,7.896875 13.5375,7.125 L17.45625,7.125 C17.69375,7.896875 17.8125,8.66875 17.8125,9.5 C17.8125,10.33125 17.69375,11.103125 17.45625,11.875 Z" id="Shape"></path></svg>
+                    </button>
+                    </div>
+                    
+                    <div class="signin items-center text-[14px] hidden sm:flex  font-[700] tracking-[0.5px] hover:text-black text-nowrap">Contact sales</div>
+                    <div class="signin items-center text-[14px] hidden sm:flex  font-[700] tracking-[0.5px] hover:text-black text-nowrap">Log In</div>
+                        <div class="star">
+                            <button class="text-[14px] h-[36px] pl-4 pr-4 bg-[#000000] text-white font-semibold rounded-[4px] tracking-[0.5px] hover:bg-[#f06969] hover:text-black text-nowrap">Get Started</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    
+
+    <main>
+        <div class="check bg-[#ffebed] flex flex-col items-center">
+            <div class="detai flex flex-col items-center ">
+                <!-- Heading and paragraph -->
+                <h1 class="text-[#690031] text-4xl lg:text-[60px] font-semibold mt-14 mb-8 font-[poppins] text-center ">Where work connects</h1>
+                <p class="text-[#690031] text-[15px] leading-[150%] lg:text-[20px] font-medium font-[poppins] mb-6 text-center">Connect work to goals and automate workflows with AI as your teammate.</p>
+    
+                <!-- Buttons -->
+                <div class="btns flex flex-col gap-6 lg:flex-row mb-5 w-full px-6 lg:px-0 lg:w-auto">
+                    <button class="pt-4 pb-4 pr-8 pl-8 bg-[#690031] text-[15px] leading-[150%] lg:text-[20px] text-[#fae3ec] rounded-[40px] font-bold font-sans hover:bg-[#964769]">Get started</button>
+                    <button class="pt-4 pb-4 pr-8 pl-8 border-2 border-[#d1a3b3] rounded-[40px] text-[15px] leading-[150%] lg:text-[20px] text-[#680067] font-semibold hover:bg-[#f0d3d9]">View demo</button>
+                </div>
+            </div>
+    
+            <!-- Video section -->
+            <div class="pb-32 mr-[5%] ml-[5%] mt-6">
+                <video class="rounded-[30px]" src="../assets/video/videoplayback.mp4" autoplay controls controlslist="nodownload"></video>
+            </div>
+        </div>
+    
+        <!-- Stats and logos section -->
+        <div class="flex mr-[6%] ml-[6%] mt-20 flex-col lg:flex-row lg:justify-between">
+            <div class="text-lg leading-[150%] lg:text-3xl font-sans  font-bold lg:font-semibold">
+                85% of Fortune 100 <br> companies choose Asana<sup>1</sup>
+            </div>
+            <div class="flex gap-1 lg:gap-6 overflow-x-auto scrollbar-hidden whitespace-nowrap">
+                <img src="../assets/img/amazon.webp" width="100%" alt="Amazon Logo" class="h-[93px] w-[139px]">
+                <img src="../assets/img/accenture.webp" alt="Accenture Logo" class="h-[93px]">
+                <img src="../assets/img/JJ.webp" alt="Johnson & Johnson Logo" class="h-[93px]">
+                <img src="../assets/img/dell.webp" class="h-[93px]" alt="Dell Logo">
+                <img src="../assets/img/merck.webp" alt="MERCK Logo" class="h-[93px]">
+            </div>
+        </div>
+    
+        <!-- Content Section with buttons and images -->
+        <div class=" pt-[50px] md:pt-[160px] mx-[2.5%]">
+            <div class="mb-12 mx-3 md:mx-12 lg:w-[55%]">
+                <h2 class="text-[32px] leading-[110%] md:text-6xl font-semibold">See how Asana connects work across different departments</h2>
+            </div>
+    
+            <!-- Topics and content section -->
+            <div class="work flex flex-col border-[1px] rounded-[20px]">
+                <div class="topics flex gap-2 font-sans pt-12 px-12  overflow-x-auto scrollbar-hidden whitespace-nowrap">
+                    <button class="infobtn1 text-[15px] leading-[150%] lg:text-lg py-3 px-6 lg:py-4 lg:px-8 font-bold rounded-[146px] bg-[#f2f2f2] hover:bg-[#e8e8e8] ">Company-wide</button>
+                    <button class="infobtn2 text-[15px] leading-[150%] lg:text-lg py-3 px-6 lg:py-4 lg:px-8 font-bold rounded-[146px] bg-[#f2f2f2] hover:bg-[#e8e8e8]">Marketing</button>
+                    <button class="infobtn3 text-[15px] leading-[150%] lg:text-lg py-3 px-6 lg:py-4 lg:px-8 font-bold rounded-[146px] bg-[#f2f2f2] hover:bg-[#e8e8e8]">Operations</button>
+                    <button class="infobtn4 text-[15px] leading-[150%] lg:text-lg py-3 px-6 lg:py-4 lg:px-8 font-bold rounded-[146px] bg-[#f2f2f2] hover:bg-[#e8e8e8]">IT</button>
+                    <button class="infobtn5 text-[15px] leading-[150%] lg:text-lg py-3 px-6 lg:py-4 lg:px-8 font-bold rounded-[146px] bg-[#f2f2f2] hover:bg-[#e8e8e8]">Product</button>
+                </div>
+    
+                <!-- Info section -->
+                 <div class="allinfo">
+                    <div class="topicInfo1 px-4 lg:pl-[40px] flex flex-col-reverse lg:flex-row pt-8 ">
+                        <div class="imag w-full lg:w-[57%] lg:pr-7">
+                            <img src="../assets/img/1.webp" alt="Asana for the whole company">
+                        </div>
+        
+                        <div class="about flex flex-col gap-8 pt-8">
+                            <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold pt-8  ">Operationalize goals</h3>
+    
+                            <div>
+                                <ul class="text-[15px] leading-[150%] md:text-xl list-none font-medium font-sans ml-[26px]">
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3 ">
+                                        Connect work to company goals
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Automate workflow across departments
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Report on progress and address bottlenecks
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <div class="pb-6">
+                                <button class="font-sans font-semibold text-[15px] leading-[150%] md:text-xl py-3 px-6 md:py-4 md:px-8 border-2 border-[#adadad] rounded-[100px] hover:bg-[#f2f2f2] ">
+                                    See how it works
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topicInfo2  px-4 lg:pl-[40px] flex flex-col-reverse pt-8 lg:flex-row hidden ">
+                        <div class="imag w-full lg:w-[57%] lg:pr-7">
+                            <img src="../assets/img/2.webp" alt="Asana for the whole company">
+                        </div>
+        
+                        <div class="about flex flex-col gap-8 pt-8">
+                            <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold pt-8  ">Meet campaign goals</h3>
+    
+                            <div>
+                                <ul class="text-[15px] leading-[150%] md:text-xl list-none font-medium font-sans ml-[26px]">
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Streamline campaign management
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Enchance creative production
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Manage events and editorial calendars
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <div class="pb-6">
+                                <button class="font-sans font-semibold text-[15px] leading-[150%] md:text-xl py-3 px-6 md:py-4 md:px-8 border-2 border-[#adadad]  rounded-[100px] hover:bg-[#f2f2f2]">
+                                    Explore marketing
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topicInfo3  px-4 lg:pl-[40px] flex flex-col-reverse pt-8 lg:flex-row hidden">
+                        <div class="imag w-full lg:w-[57%]lg:pr-7">
+                            <img src="../assets/img/3.webp" alt="Asana for the whole company">
+                        </div>
+        
+                        <div class="about flex flex-col gap-8 pt-8">
+                            <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold pt-8  ">Drive operational efficiency</h3>
+    
+                            <div>
+                                <ul class="text-[15px] leading-[150%] md:text-xl list-none font-medium font-sans ml-[26px]">
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Track work and see progress in real time
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Standardize and automate processes
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Unblock teams to hit revenue goals
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <div class="pb-6">
+                                <button class="font-sans font-semibold text-[15px] leading-[150%] md:text-xl py-3 px-6 md:py-4 md:px-8 border-2 border-[#adadad]  rounded-[100px] hover:bg-[#f2f2f2]">
+                                    Explore operations
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topicInfo4  px-4 lg:pl-[40px] flex flex-col-reverse pt-8 lg:flex-row hidden">
+                        <div class="imag w-full lg:w-[57%] lg:pr-7">
+                            <img src="../assets/img/4.webp" alt="Asana for the whole company">
+                        </div>
+        
+                        <div class="about flex flex-col gap-8 pt-8">
+                            <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold pt-8 ">Prioritize and streamline 
+                                IT </h3>
+    
+                            <div>
+                                <ul class="text-[15px] leading-[150%] md:text-xl list-none font-medium font-sans ml-[26px]">
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Allocate resources more effectively
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Automate and scale workflows
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Onboard and offboard employees
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <div class="pb-6">
+                                <button class="font-sans font-semibold text-[15px] leading-[150%] md:text-xl  py-3 px-6 md:py-4 md:px-8 border-2 border-[#adadad] rounded-[100px] hover:bg-[#f2f2f2]">
+                                    Explore IT
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="topicInfo5 px-4 lg:pl-[40px] flex flex-col-reverse pt-8 lg:flex-row hidden">
+                        <div class="imag w-full lg:w-[57%] lg:pr-7">
+                            <img src="../assets/img/5.webp" alt="Asana for the whole company">
+                        </div>
+        
+                        <div class="about flex flex-col gap-8 pt-8">
+                            <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold pt-8  ">Launch better products faster</h3>
+    
+                            <div>
+                                <ul class="text-[15px] leading-[150%] md:text-xl list-none font-medium font-sans ml-[26px]">
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Keep product development on track
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Centralize launch information
+                                    </li>
+                                    <li class="relative before:absolute before:left-[-1.5rem] before:top-[0.1em] before:content-[''] before:bg-[url('../assets/img/checkcircle.png')] before:bg-cover before:w-[1em] before:h-[1em] mb-3">
+                                        Tie your product roadmap to your statergy
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <div class="pb-6">
+                                <button class="font-sans font-semibold text-[15px] leading-[150%] md:text-xl py-3 px-6 md:py-4 md:px-8 border-2 border-[#adadad] rounded-[100px] hover:bg-[#f2f2f2]">
+                                    Explore product
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                
+            </div> 
+        </div>
+
+
+
+        
+        <!-- Speaciality of Asana -->
+        <div class="special bg-[#ccf0ff] mt-32">
+            <div class="specialContain pt-[120px] pb-[50px] lg:pb-[120px] lg:px-[40px] mx-6">
+                <h3 class="text-[32px] leading-[110%] md:text-6xl font-semibold text-[#222875]">What sets Asana apart</h3>
+
+                <div class="contemt flex flex-col lg:flex-row  gap-8 mt-16">
+                    <!-- Goal section -->
+                    <div id="goal" class="goal w-full lg:w-[65%] flex flex-col lg:h-[500px] lg:flex-row bg-[#222875] pl-6 gap-6  rounded-[20px] transition-all duration-500 overflow-hidden  pr-2">
+                        <div id="goaltex" class="goaltex text-[#ccf0ff] flex flex-col justify-between w-full lg:w-[50%] transition-all duration-500 py-[40px] gap-5 lg:gap-0">
+                            <div class="flex flex-col gap-9 ">
+                                <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold">More clarity and accountability</h3>
+                                <p class="font-semibold text-[14px] leading-[150%] md:text-base">Connect strategic goals to the teams that help achieve them. See progress in real time, update stakeholders, and keep the company on track.</p>
+                            </div>
+                            <div>
+                                <button class="text-[15px] leading-[150%] md:text-xl font-bold border-2 border-[#5a6aa3] py-3 px-6 md:px-8 md:py-4 rounded-[100px]">Learn about goals</button>
+                            </div>
+                        </div>
+                        <div id="goalimg" class="goalimg w-full lg:w-[50%] flex lg:items-end lg:justify-end mt-[8%]">
+                            <img src="../assets/img/asanaapart1.webp" alt="" class="object-contain " style="max-height: 100%;">
+                        </div>
+                    </div>
+                
+                    <!-- AI section -->
+                    <div id="ai" class="ai w-full lg:w-[35%] flex bg-[#222875] flex-col pr-2 lg:flex-row pl-6 gap-6 lg:h-[500px] rounded-[20px] transition-all duration-500 overflow-hidden">
+                        <div id="aitex" class="aitex text-[#ccf0ff] flex flex-col justify-between w-full  transition-all duration-500 py-[40px] gap-5 lg:gap-0">
+                            <div class="flex flex-col gap-9">
+                                <h3 class="text-[23px] leading-[120%] md:text-4xl font-semibold">#1 AI platform for work management</h3>
+                                <p class="font-semibold text-[14px] leading-[150%] md:text-base">AI has joined the team to help every organization work smarter. Drive greater clarity, impact, and scale with Asana AI, powered by the Work Graph®.</p>
+                            </div>
+                            <div><button class="text-[15px] leading-[150%] md:text-xl font-bold border-2 border-[#5a6aa3] py-3 px-6 md:px-8 md:py-4 rounded-[100px]">Meet Asana AI</button></div>
+                        </div>
+                        <div id="aiimg" class="goalimg w-full lg:w-[50%] flex lg:items-end lg:justify-end mt-[8%] lg:hidden">
+                            <img src="../assets/img/asanaapart1.webp" alt="" class="object-contain max-h-[100%]">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="security flex mt-[100px] flex-col-reverse lg:flex-row">
+                    <div class="organizationslogo ">
+                        <!-- 3logos -->
+                         <img src="../assets/img/securitylogo.svg" alt="Asana security certification logo" class="w-[100%]">
+                    </div>
+                    <div class="aboutsecu flex flex-col gap-7 w-[90%] lg:w-[40%] mx-[5.4%] font-semibold text-[#222875]">
+                        <h3 class="text-[23px] leading-[120%] md:text-4xl">Scale with enterprise-grade security</h3>
+                        <p class="text-[15px] leading-[150%] md:text-[20px] font-poppins font-medium">Ensure your company's data is completely secure and that you are in compliance with the latest standards.</p>
+                        <div class="pb-8">
+                            <button class="py-3 px-6 md:py-4 md:px-8 text-[15px] leading-[150%] md:text-xl border-2 border-[#92add1] text-[#222875] rounded-[120px] font-semibold hover:bg-[#bbdcf2] text-nowrap">Explore security</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTEGRATIONS -->
+        <div class="integrations flex flex-col gap-[80px]">
+            <div class="integrateinfo flex flex-col gap-8 mx-[5%] mt-[160px] w-[80%] lg:w-[40%] ">
+                <div class="text-[32px] leading-[110%] md:text-[54px] md:leading-[60px] font-semibold"><h2>Connect over 300+ integrations</h2></div>
+                <div class="text-[15px] leading-[150%] md:text-xl md:leading-10 pb-4 font-medium"><p class="">Ensure your company's data is completely secure and that you are in compliance with the latest standards</p></div>
+                <div><button class="text-[15px] leading-[150%] md:text-xl py-3 px-6 md:px-8 md:py-4 rounded-[100px] border-2 border-[#adadad] font-medium hover:bg-[#f2f2f2]">See all integrations</button></div>
+            </div>
+
+            
+            <div class="integratlogos overflow-hidden w-full flex flex-col gap-5">
+                <!-- Top row of logos -->
+                <div class="top flex ">
+                  <div class="flex gap-5">
+                    <!-- Top Logos -->
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Microsoft Teams.svg" alt="Microsoft Teams" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Google Drive.svg" alt="Google Drive" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Salesforce.svg" alt="Salesforce" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Microsoft Outlook.svg" alt="Outlook" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Adobe CC.svg" alt="Adobe Creative Cloud" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Slack.svg" alt="Slack" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Zendesk.svg" alt="Zendesk" />
+                    </div>
+                    
+                  </div>
+                </div>
+              
+                <!-- Bottom row of logos -->
+                <div class="bottom flex">
+                  <div class="flex gap-5">
+                    <!-- Bottom Logos -->
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Tableau.svg" alt="Tableau" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Nightfall.svg" alt="Nightfall" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Vimeo.svg" alt="Vimeo" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Okta.svg" alt="Okta" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Microsoft.svg" alt="Microsoft" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/logo-app-Twilio.svg" alt="Twilio" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/ServiceNow.svg" alt="Servicenow" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Pagerduty.svg" alt="PagerDuty" />
+                    </div>
+                    <div class="logo flex justify-center w-[162px] h-[82px] md:w-[324px] md:h-[164px] py-4 items-center lg:py-8  bg-white border border-opacity-70 rounded-xl lg:rounded-[20px]">
+                      <img class="w-[150px] h-[50px] md:h-[100px]" src="../assets/img/Figma.svg" alt="Figma" />
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
+              
+              
+
+        </div>
+
+
+
+        <div class="trusts mx-[5.715%] flex flex-col pt-16 lg:pt-[160px]">
+            <div class=" w-full lg:w-[70%] mb-6 lg:mb-0">
+                <div class="mb-4"><h2 class="text-2xl md:text-[60px] font-medium font-sans leading-[100%]">The world's top companies trust Asana</h2></div>
+                <div><button class="text-[15px] leading-[150%] font-sans md:text-[20px] md:font-poppins font-bold md:font-medium px-6 py-3 md:py-4 md:px-8 border border-opacity-50 border-black rounded-[100px] hover:bg-[#f2f2f2]">See all case studies</button></div>
+            </div>
+
+            <div class="flex flex-col ">
+                <div class="arrows flex justify-end pb-4 gap-4 mr-10">
+                    <div class="arrowleft bg-black w-[42px] h-[42px] rounded-[50%] flex justify-center items-center transform rotate-180">
+                        <button class="prev"><img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" width="28" alt=""></button>
+                    </div>
+
+                    <div class="arrowright bg-black w-[42px] h-[42px] rounded-[50%] flex justify-center items-center">
+                        <button class="next"><img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" width="28" alt=""></button>
+                    </div>
+                </div>
+
+                
+                <div class="cont1 flex border-2 mb-6 flex-col lg:flex-row rounded-[20px] md:h-auto lg:h-[614px]">
+
+                        <div class="contleft w-full lg:w-[45%] p-8 pb-14 flex flex-col justify-between items-center items-start">
+                            <div class="mt-8">
+                                <img src="../assets/img/Danone_40px_quote.svg" alt="">
+                            </div>
+                            
+                            <div class="hidden lg:flex lg:flex-col lg:gap-5 w-full">
+                                <hr>
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mt-6 mb-1">COMPANY SIZE</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Enterprise</p></div>
+                                </div>
+
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mb-1">INDUSTRY</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Food / Hospitality</p></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contright w-[100%] rounded-b-[20px] lg:rounded-r-[20px] lg:rounded-bl-none bg-[#ccf0ff] flex flex-col lg:flex-row p-14 gap-4">
+
+                            <div class="appostofi w-[8%] lg:w-[10%]">
+                                <svg viewBox="0 0 39 32" fill="#222875" xmlns="http://www.w3.org/2000/svg"><path d="m16.3 4-4.333-4C4.189 5.557.078 12.89.078 20.668v.445C.078 27.779 3.745 32 8.856 32c4.222 0 7.778-3.334 7.778-7.89 0-4.444-3.111-7.332-7.334-7.332a7.15 7.15 0 0 0-2.666.555C7.41 12.223 11.3 7.78 16.3 4.001Zm21.667 0-4.333-4c-7.778 5.556-11.89 12.89-11.89 20.667v.445c0 6.667 3.668 10.889 8.779 10.889 4.222 0 7.777-3.334 7.777-7.89 0-4.444-3.11-7.332-7.333-7.332a7.15 7.15 0 0 0-2.667.555c.778-5.111 4.667-9.555 9.667-13.333Z"></path></svg>
+                            </div>
+
+                            <div class="flex flex-col justify-between ">
+                                <div class="flex flex-col gap-8 pb-4 lg:pb-0">
+                                    <div>
+                                    <p class="text-xl lg:text-[36px] text-[#222875] leading-[130%] font-[500]">Asana makes everything shareable, which saves us time executing programs because it's so much easier to replicate and learn from what others have done.</p>
+                                    </div>
+
+                                    <div><p class="text-[#222875] text-[16px] leading-[150%] font-bold">Simon Levinson</p>
+                                        <p class="text-[#222875] font-poppins text-[16px] leading-[150%] font-[500]">Global Digital Manufacturing Process Innovation Manager, Danone</p></div>
+                                </div>
+
+                                <div class="flex justify-start lg:justify-end">
+                                    <button class="text-[20px] leading-[30px] py-4 px-8 border border-opacity-50 border-[#6576ab] text-[#222875] font-semibold rounded-[100px] text-nowrap hover:bg-[#b7d8ed]">Read case study</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                </div>
+
+                <div class="cont2 flex flex-col mb-6 lg:flex-row hidden border-2 rounded-[20px] md:h-auto lg:h-[614px]">
+
+                        <div class="contleft w-full lg:w-[45%] p-8 pb-14 flex flex-col justify-between items-center lg:items-start">
+                            <div class="mt-8 ">
+                                <img src="../assets/img/Kendo_40px_quote.svg" alt="">
+                            </div>
+                            <div class="hidden w-full lg:flex lg:flex-col lg:gap-5">
+                                <hr>
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mt-6 mb-1">COMPANY SIZE</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Mid-Market</p></div>
+                                </div>
+
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mb-1">INDUSTRY</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Retail / Consumer Package Goods</p></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contright rounded-b-[20px] lg:rounded-bl-none lg:rounded-r-[20px] w-[100%] bg-[#ffebed] flex flex-col lg:flex-row p-14 gap-4">
+
+                            <div class="appostofi w-[8%] lg:w-[16%] ">
+                                <svg viewBox="0 0 39 32" fill="#690031" xmlns="http://www.w3.org/2000/svg"><path d="m16.3 4-4.333-4C4.189 5.557.078 12.89.078 20.668v.445C.078 27.779 3.745 32 8.856 32c4.222 0 7.778-3.334 7.778-7.89 0-4.444-3.111-7.332-7.334-7.332a7.15 7.15 0 0 0-2.666.555C7.41 12.223 11.3 7.78 16.3 4.001Zm21.667 0-4.333-4c-7.778 5.556-11.89 12.89-11.89 20.667v.445c0 6.667 3.668 10.889 8.779 10.889 4.222 0 7.777-3.334 7.777-7.89 0-4.444-3.11-7.332-7.333-7.332a7.15 7.15 0 0 0-2.667.555c.778-5.111 4.667-9.555 9.667-13.333Z"></path></svg>
+                            </div>
+
+                            <div class="flex flex-col justify-between">
+                                <div class="flex flex-col gap-8 pb-4 lg:pb-0">
+                                    <div>
+                                    <p class="text-xl lg:text-[36px] text-[#690031] leading-[130%] font-[500]">To hit our ambitious growth target, we need to move fast. But we can’t do it without clear processes that remove as many blockers as possible. I'm a strong believer that implementing processes, like the ones we built in Asana, will help us drive success.</p>
+                                    </div>
+
+                                    <div><p class="text-[#690031] text-[16px] leading-[150%] font-bold">Romain Ehrhard</p>
+                                        <p class="text-[#690031] font-poppins text-[16px] leading-[150%] font-[500]">CIO, KENDO</p></div>
+                                </div>
+
+                                <div class="flex justify-start lg:justify-end">
+                                    <button class="text-[20px] leading-[30px] py-4 px-8 border border-[#c48fa4] text-[#690031] font-semibold text-nowrap rounded-[100px] hover:bg-[#f0d3d9]">Read case study</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                </div>
+
+
+                <div class="cont3 flex flex-col mb-6 lg:flex-row hidden border-2 rounded-[20px] md:h-auto lg:h-[614px] ">
+
+                        <div class="contleft w-full lg:w-[45%] p-8 pb-14 flex flex-col justify-between items-center lg:items-start">
+                            <div class="mt-8 ">
+                                <img src="../assets/img/Spotify_40px_quote.svg" alt="">
+                            </div>
+                            <div class="hidden w-full lg:flex lg:flex-col lg:gap-5">
+                                <hr>
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mt-6 mb-1">COMPANY SIZE</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Enterprise</p></div>
+                                </div>
+
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mb-1">INDUSTRY</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Technology</p></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contright rounded-b-[20px] lg:rounded-bl-none lg:rounded-r-[20px] w-[100%] bg-[#cafcdc] flex flex-col lg:flex-row p-14 gap-4">
+
+                            <div class="appostofi w-[8%] lg:w-[10%]">
+                                <svg viewBox="0 0 39 32" fill="#004232" xmlns="http://www.w3.org/2000/svg"><path d="m16.3 4-4.333-4C4.189 5.557.078 12.89.078 20.668v.445C.078 27.779 3.745 32 8.856 32c4.222 0 7.778-3.334 7.778-7.89 0-4.444-3.111-7.332-7.334-7.332a7.15 7.15 0 0 0-2.666.555C7.41 12.223 11.3 7.78 16.3 4.001Zm21.667 0-4.333-4c-7.778 5.556-11.89 12.89-11.89 20.667v.445c0 6.667 3.668 10.889 8.779 10.889 4.222 0 7.777-3.334 7.777-7.89 0-4.444-3.11-7.332-7.333-7.332a7.15 7.15 0 0 0-2.667.555c.778-5.111 4.667-9.555 9.667-13.333Z"></path></svg>
+                            </div>
+
+                            <div class="flex flex-col justify-between">
+                                <div class="flex flex-col gap-8 pb-4 lg:pb-0">
+                                    <div>
+                                    <p class="text-xl lg:text-[36px] text-[#004232] leading-[130%] font-[500]">Asana is our air traffic control. We have the visibility to scale production and support a higher number of ad campaigns to support our revenue goals.</p>
+                                    </div>
+
+                                    <div><p class="text-[#004232] text-[16px] leading-[150%] font-bold">Eugenia Contreras</p>
+                                        <p class="text-[#004232] font-poppins text-[16px] leading-[150%] font-[500]">Associate Manager, Spotify</p></div>
+                                </div>
+
+                                <div class="flex justify-start lg:justify-end">
+                                    <button class="text-[20px] leading-[30px] py-4 px-8 border border-[#508c76] text-[#004232] font-semibold text-nowrap rounded-[100px] hover:bg-[#b5e8c9]">Read case study</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                </div>
+
+
+                <div class="cont4 flex flex-col mb-6 lg:flex-row hidden border-2 rounded-[20px] md:h-auto lg:h-[614px] ">
+
+                        <div class="contleft w-full lg:w-[45%] p-8 pb-14 flex flex-col justify-between items-center lg:items-start">
+                            <div class="mt-8 ">
+                                <img src="../assets/img/Gannett_40px_quote.svg" alt="">
+                            </div>
+                            <div class="hidden w-full lg:flex lg:flex-col lg:gap-5">
+                                <hr>
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mt-6 mb-1">COMPANY SIZE</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Enterprise</p></div>
+                                </div>
+
+                                <div>
+                                    <div><p class="text-[#6e6e6e] text-[11px] leading-[150%] font-[500] mb-1">INDUSTRY</p></div>
+                                    <div><p class="text-[20px] font-poppins font-[400] leading-[150%]">Media</p></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contright rounded-b-[20px] lg:rounded-bl-none lg:rounded-r-[20px] w-[100%] bg-[#ccf0ff] flex flex-col lg:flex-row p-14 gap-4">
+
+                            <div class="appostofi w-[8%] lg:w-[12%]">
+                                <svg viewBox="0 0 39 32" fill="#222875" xmlns="http://www.w3.org/2000/svg"><path d="m16.3 4-4.333-4C4.189 5.557.078 12.89.078 20.668v.445C.078 27.779 3.745 32 8.856 32c4.222 0 7.778-3.334 7.778-7.89 0-4.444-3.111-7.332-7.334-7.332a7.15 7.15 0 0 0-2.666.555C7.41 12.223 11.3 7.78 16.3 4.001Zm21.667 0-4.333-4c-7.778 5.556-11.89 12.89-11.89 20.667v.445c0 6.667 3.668 10.889 8.779 10.889 4.222 0 7.777-3.334 7.777-7.89 0-4.444-3.11-7.332-7.333-7.332a7.15 7.15 0 0 0-2.667.555c.778-5.111 4.667-9.555 9.667-13.333Z"></path></svg>
+                            </div>
+
+                            <div class="flex flex-col justify-between">
+                                <div class="flex flex-col gap-8 pb-4 lg:pb-0">
+                                    <div>
+                                    <p class="text-xl lg:text-[36px] text-[#222875] leading-[130%] font-[500]">Having one centralized ecosystem that brings all doers and stakeholders together has really accelerated our understanding of the work we do and the speed in which we do it.</p>
+                                    </div>
+
+                                    <div><p class="text-[#222875] text-[16px] leading-[150%] font-bold">Steven Tai</p>
+                                        <p class="text-[#222875] font-poppins text-[16px] leading-[150%] font-[500]">Director, Marketing Operations, Gannett</p></div>
+                                </div>
+
+                                <div class="flex justify-start lg:justify-end">
+                                    <button class="text-[20px] leading-[30px] py-4 px-8 border border-opacity-50 border-[#6576ab] text-[#222875] text-nowrap font-semibold rounded-[100px] hover:bg-[#bbdcf2]">Read case study</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                </div>
+                
+
+
+
+                <div class="pageno flex gap-3 justify-center">
+                    <div class="page1 w-[10px] h-[10px] rounded-[50%]  bg-[#ff594a]">
+
+                    </div>
+                    <div class="page2 w-[10px] h-[10px] rounded-[50%] bg-[#f2f2f2]">
+
+                    </div>
+                    <div class="page3 w-[10px] h-[10px] rounded-[50%] bg-[#f2f2f2]">
+
+                    </div>
+                    <div class="page4 w-[10px] h-[10px] rounded-[50%] bg-[#f2f2f2]">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="gettingstarted  pt-[80px]">
+            <div class=" bg-[#fafafa] rounded-[20px] py-[60px] lg:py-[120px] px-4 lg:px-[40px] lg:mx-6 flex flex-col lg:flex-row ">
+
+                <div class="inffofo w-full lg:w-[80%] pb-3">
+                    <div class="mb-3 md:mb-6 text-[32px] leading-[110%] lg:text-6xl font-semibold"><h2>Get started easily</h2></div>
+
+                    <div class="text-[15px] leading-[150%] md:text-[20px] font-[500]"><p>Tour the platform, read a few deep dives, or kickstart your work management journey with the right template.</p></div>
+                </div>
+
+                
+                <div class="explor w-[100%] flex flex-col gap-4">
+
+                    <div class="trydemo bg-[#ffffff] flex justify-between items-center p-8 rounded-[20px] hover:bg-[#f2f2f2]">
+                        <div class="flex flex-col gap-3">
+                            <div><h3 class="text-[20px] leading-[140%] md:text-[30px] md:leading-[120%] font-semibold">Try the Asana demo</h3></div>
+                            <div><p class="text-[#6e6e6e] text-[15px] leading-[150%] md:text-[20px] md:leading-[30px] font-semibold">See Asana in action</p></div>
+                        </div>
+                        <div class="bg-black w-8 h-8 md:w-[60px] md:h-[60px] rounded-[50%] flex justify-center items-center">
+                            <img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" class="w-6 md:w-8" alt="">
+                        </div>
+                    </div>
+
+                    <div class="discover bg-[#ffffff] flex justify-between items-center p-8 rounded-[20px] hover:bg-[#f2f2f2]">
+                        <div class="flex flex-col gap-3">
+                            <div><h3 class="text-[20px] leading-[140%] md:text-[30px] md:leading-[120%] font-semibold">Discover resources</h3></div>
+                            <div><p class="text-[#6e6e6e] text-[15px] leading-[150%] md:text-[20px] md:leading-[30px] font-semibold">Help articles and tutorials</p></div>
+                        </div>
+                        <div class="bg-black w-8 h-8 md:w-[60px] md:h-[60px] rounded-[50%] flex justify-center items-center">
+                            <img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" class="w-6 md:w-8" alt="">
+                        </div>
+                    </div>
+
+                    <div class="template bg-[#ffffff] flex justify-between items-center p-8 rounded-[20px] hover:bg-[#f2f2f2]">
+                        <div class="flex flex-col gap-3">
+                            <div><h3 class="text-[20px] leading-[140%] md:text-[30px] md:leading-[120%] font-semibold">Start with a template</h3></div>
+                            <div><p class="text-[#6e6e6e] text-[15px] leading-[150%] md:text-[20px] md:leading-[30px] font-semibold">Get started faster with a template</p></div>
+                        </div>
+                        <div class="bg-black w-8 h-8 md:w-[60px] md:h-[60px] rounded-[50%] flex justify-center items-center">
+                            <img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" class="w-6 md:w-8" alt="">
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    <div class="analyst flex flex-col gap-[40px] mx-[5.715%] pt-[80px] ">
+        <div><h2 class="text-[32px] leading-[110%] lg:text-6xl font-medium font-poppins w-full lg:w-[60%]">Recognized as a leader by top analyst firms</h2></div>
+
+        <div class="flex gap-6 flex-wrap lg:flex-nowrap">
+
+            <div class="gartner flex flex-col gap-6 lg:w-[33%] "> 
+                <div class="logooo "><img src="../assets/img/gartner.webp" alt="Gartner"></div>
+                <div><p class="text-[15px] leading-[150%] md:text-[20px] font-poppins font-[500]">A Leader in the Gartner Magic Quadrant for Collaborative Work Management<sup class="text-xs">2</sup></p></div>
+                <div class="learn flex mt-6 gap-2 items-center ">
+                    <div><p class="text-[15px] leading-[150%] md:text-[20px] font-semibold hover:text-[#6e6e6e]">Learn more</p></div>
+                    <div class="bg-black w-6 h-6 rounded-[50%] flex justify-center hover:bg-[#6e6e6e] ">
+                        <img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" width="16px" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="forrester flex flex-col gap-6 lg:w-[33%]">
+                <div class="logooo"><img src="../assets/img/Forrester-Wave.webp" alt="Gartner"></div>
+                <div><p class="text-[15px] leading-[150%] md:text-[20px] font-poppins font-[500]">A Leader in the Forrester Wave<sup class="text-xs">TM</sup>: Collaborative Work Management Tools Report<sup class="text-xs">3</sup></p></div>
+                <div class="learn flex mt-6 gap-2 items-center">
+                    <div><p class="text-[15px] leading-[150%] md:text-[20px] font-semibold hover:text-[#6e6e6e]">Learn more</p></div>
+                    <div class="bg-black w-6 h-6 rounded-[50%] flex justify-center hover:bg-[#6e6e6e]">
+                        <img src="../assets/img/arrow_right_alt_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" width="16px" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="idc flex flex-col gap-6 lg:w-[33%]">
+                <div class="logooo"><img src="../assets/img/IDC.webp" alt="Gartner"></div>
+                <div><p class="text-[15px] leading-[150%] md:text-[20px] font-poppins font-[500]">A Leader in the IDC MarketScape: Worldwide Collaborative Work Management Vendor Assessment<sup class="text-xs">4</sup></p></div>
+                
+            </div>
+
+        </div>
+    </div>        
+
+
+        <div class="last bg-[#690031] text-[#ffebed] mt-[40px] pb-[50px] lg:pb-[100px]">
+            <div class="heading mx-6 py-[120px] px-3 lg:px-[40px] border-b border-[#995778] border-opacity-50 mb-9 ">
+                <div class="mb-9 w-full xl:w-[45%]"><h2 class="whitespace-pre-wrap text-[32px] leading-[110%] lg:text-6xl font-[500]">The only platform that can support your company at any scale</h2></div>
+                <div><button class="text-[12px] leading-[150%] lg:text-sm rounded-[100px] font-sans font-bold py-4 px-8 bg-[#ffebed] text-[#690031] hover:bg-[#d1a3b3]">Get started</button></div>
+            </div>
+            
+            <div class="details mx-6 px-3 lg:px-[40px] flex flex-col gap-4 text-[12px] leading-[150%] lg:text-sm font-semibold  pb-[50px]">
+                <p>1. Accurate as of December 2023, includes free and paid users.</p>
+                <p>2. See the <a href="https://asana.com/resources/gartner-magic-quadrant-collaborative-work-management" class="underline">2023 Gartner® Magic Quadrant™ for Collaborative Work Management (CWM)</a>. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally, MAGIC QUADRANT and PEER INSIGHTS are registered trademarks and The GARTNER PEER INSIGHTS CUSTOMERS’ CHOICE badge is a trademark and service mark of Gartner, Inc. and/or its affiliates and is used herein with permission. All rights reserved. </p>
+                <p>3. See <a href="https://asana.com/resources/forrester-wave-collaborative-work-management-2022" class="underline"> The Forrester Wave™: Collaborative Work Management Tools, Q4 2022 report</a>. The Forrester Wave: Collaborative Work Management Tools, Q4 2022. The Forrester Wave is copyrighted by Forrester Research, Inc. Forrester and Forrester Wave are trademarks of Forrester Research, Inc. The Forrester Wave is a graphical representation of Forrester’s call on a market and is plotted using a detailed spreadsheet with exposed scores, weightings, and comments. Forrester does not endorse any vendor, product, or service depicted in the Forrester Wave. Information is based on best available resources. Opinions reflect judgment at the time and are subject to change.</p>
+                <p>4. IDC MarketScape: Worldwide Collaborative Work Management 2023–2024 Vendor Assessment — Uniting Teams, Data, and AI for Flexible Work, Doc #US49434923, December 2023</p>
+            </div>
+
+        </div>
+    </main>
+    
+
+
+    <footer>
+        <div class="foooter flex flex-col bg-[#690031] ">
+            <div class="listss py-[80px] mx-12 lg:mx-16 border-t border-[#995778] border-opacity-50 flex  flex-col lg:flex-row">
+                <div class="asanalogo w-[7%] lg:w-[5%]">
+                    <svg><path class="_nav_logo-link__asana-icon__H3Xqa" d="M18.559 11.605a5.158 5.158 0 1 0 0 10.317 5.158 5.158 0 0 0 0-10.317Zm-13.401.001a5.158 5.158 0 1 0 0 10.315 5.158 5.158 0 0 0 0-10.315Zm11.858-6.448a5.158 5.158 0 1 1-10.316 0 5.158 5.158 0 0 1 10.316 0Z" fill="#F06A6A"></path></svg>
+                </div>
+
+                <div class="listss text-[14px] flex flex-wrap justify-between gap-9 lg:justify-between w-[100%]">
+                    <div class="list1">
+                        <ul class="text-[#e0bac6] flex flex-col gap-[14px] font-[500] font-poppins">
+                            <li class="text-[#ffeae0]">Asana</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Home</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Product</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">What's New</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Pricing</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Starter</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Advanced</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Enterprise</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Customer Success</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Asana Templates</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Trust & Security</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Status</li>
+                        </ul>
+                    </div>
+
+                    <div class="list2">
+                        <ul class="text-[#e0bac6] flex flex-col gap-[14px] font-[500] font-poppins">
+                            <li class="text-[#ffeae0]">About Us</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Company</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Leadership</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Customers</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Diversity</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Careers</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Press</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Wavelength</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Inside Asana</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Investor Relations</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Sitemap</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Modern Slavery <br> <span class="flex-wrap">Transparency Statement</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="list3">
+                        <ul class="text-[#e0bac6] flex flex-col gap-[14px] font-[500] font-poppins">
+                            <li class="text-[#ffeae0]">Workflow Solutions</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Project Management</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Goal Management</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Agile Management</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Task Management</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Increase Productivity</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Work Management</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Project Planning</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">To Do Lists</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">See all users</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">See All Teams</li>
+                        </ul>
+                    </div>
+
+                    <div class="list4">
+                        <ul class="text-[#e0bac6] flex flex-col gap-[14px] font-[500] font-poppins">
+                            <li class="text-[#ffeae0]">Resources</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Help Center</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Forum</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Support</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">App Directory</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Developers & API</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Partners</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Asana Community</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Events</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Asana for Nonprofits</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Asana for Education</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Accessibility</li>
+                        </ul>
+                    </div>
+
+                    <div class="list5">
+                        <ul class="text-[#e0bac6] flex flex-col gap-[14px] font-[500] font-poppins">
+                            <li class="text-[#ffeae0]">Learn</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">11 Leadership Styles</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">110 Icebreaker Questions</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Executive Summary Tips</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Imposter Syndrome Tips</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">Prevent Team Burnout</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">SWOT Analysis Tips</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">What are OKRs?</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">What are SMART Goals?</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">What is Scope Creep?</li>
+                            <li class="hover:underline underline-offset-2 hover:text-[#ffebed]">See All resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" bg-[#700c39]">
+                <div class="copywrightsetc mx-16 flex flex-col justify-center gap-8 lg:flex-row lg:justify-around items-center py-8 px-[7%]">
+                    <div class="copy text-white font-bold text-base">
+                        &copy 2024 Asana,Inc.
+                    </div>
+
+                    <div class="langu flex font-bold text-[#e0bac6] gap-2 text-base ">
+                        <div class="globe2 fill-[#e0bac6] ">
+                            <svg class="_nav_language-selector__icon__Ua_c5" width="20px" height="28px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="" d="M9.5,0 C4.275,0 0,4.275 0,9.5 C0,14.725 4.275,19 9.5,19 C14.725,19 19,14.725 19,9.5 C19,4.275 14.725,0 9.5,0 Z M16.98125,5.9375 L13.359375,5.9375 C13.0625,4.096875 12.528125,2.553125 11.815625,1.54375 C14.13125,2.196875 15.971875,3.8 16.98125,5.9375 Z M12.46875,9.5 C12.46875,10.33125 12.409375,11.103125 12.35,11.875 L6.65,11.875 C6.590625,11.103125 6.53125,10.33125 6.53125,9.5 C6.53125,8.66875 6.590625,7.896875 6.65,7.125 L12.35,7.125 C12.409375,7.896875 12.46875,8.66875 12.46875,9.5 Z M9.5,17.8125 C8.490625,17.8125 7.3625,15.971875 6.828125,13.0625 L12.171875,13.0625 C11.6375,15.971875 10.509375,17.8125 9.5,17.8125 Z M6.828125,5.9375 C7.3625,3.028125 8.490625,1.1875 9.5,1.1875 C10.509375,1.1875 11.6375,3.028125 12.171875,5.9375 L6.828125,5.9375 Z M7.184375,1.54375 C6.471875,2.553125 5.9375,4.096875 5.640625,5.9375 L2.01875,5.9375 C3.028125,3.8 4.86875,2.196875 7.184375,1.54375 Z M1.54375,7.125 L5.4625,7.125 C5.403125,7.896875 5.34375,8.66875 5.34375,9.5 C5.34375,10.33125 5.403125,11.103125 5.4625,11.875 L1.54375,11.875 C1.30625,11.103125 1.1875,10.33125 1.1875,9.5 C1.1875,8.66875 1.30625,7.896875 1.54375,7.125 Z M2.01875,13.0625 L5.640625,13.0625 C5.9375,14.903125 6.471875,16.446875 7.184375,17.45625 C4.86875,16.803125 3.028125,15.2 2.01875,13.0625 Z M11.815625,17.45625 C12.528125,16.3875 13.0625,14.903125 13.359375,13.0625 L16.98125,13.0625 C15.971875,15.2 14.13125,16.803125 11.815625,17.45625 Z M17.45625,11.875 L13.5375,11.875 C13.596875,11.103125 13.65625,10.33125 13.65625,9.5 C13.65625,8.66875 13.596875,7.896875 13.5375,7.125 L17.45625,7.125 C17.69375,7.896875 17.8125,8.66875 17.8125,9.5 C17.8125,10.33125 17.69375,11.103125 17.45625,11.875 Z" id="Shape"></path></svg>
+                        </div>
+                        <div class="langutext"><button>English</button></div>
+                    </div>
+
+                    <div class="terms text-base text-[#e0bac6] font-bold"><p> <span class="hover:text-white hover:underline hover:underline-offset-2">Terms</span> & <span class="hover:text-white hover:underline-offset-2">Privacy</span></p></div>
+                    
+                    <div class="social flex justify-center items-center px-4 gap-1">
+                        <div aria-describedby="https://twitter.com/intent/follow?screen_name=asana" class="twitter w-8 h-8 bg-black rounded-[50%] flex flex-col justify-center items-center ">
+                            <a href="https://twitter.com/intent/follow?screen_name=asana" target="_blank" rel="noopener noreferrer" class="log fill-white  ">
+                                <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" aria-labelledby="twitter-title-id" aria-hidden="false"><title id="twitter-title-id">Twitter</title><path d="m9.51904,7.34694l5.24621,-5.97185l-1.24275,0l-4.5572,5.18421l-3.63712,-5.18421l-4.19603,0l5.50124,7.84019l-5.50124,6.26163l1.24275,0l4.80942,-5.47588l3.8419,5.47588l4.19603,0m-12.39881,-13.18409l1.90921,0l8.78893,12.31145l-1.90968,0"></path></svg>
+                            </a>
+                        </div>
+                        <div aria-describedby="https://www.linkedin.com/company/asana" class="linkedin w-8 h-8 bg-black rounded-[50%] flex flex-col justify-center items-center ">
+                            <a href="https://www.linkedin.com/company/asana" target="_blank" rel="noopener noreferrer" class="log fill-white ">
+                                <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" aria-labelledby="linkedin-title-id" aria-hidden="false"><title id="linkedin-title-id">Linkedin</title><path d="M4.63 14.784H1.858V5.913H4.63v8.871Zm-1.456-9.98h-.02c-1.003 0-1.654-.68-1.654-1.538 0-.876.67-1.54 1.694-1.54 1.022 0 1.651.662 1.671 1.537 0 .86-.65 1.54-1.691 1.54Zm12.548 9.98H12.58v-4.59c0-1.202-.49-2.021-1.573-2.021-.828 0-1.287.553-1.5 1.086-.08.19-.069.458-.069.725v4.8H6.323s.04-8.132 0-8.871h3.114v1.392c.184-.609 1.18-1.478 2.768-1.478 1.97 0 3.517 1.276 3.517 4.024v4.933Z"></path></svg>
+                            </a>
+                        </div>
+                        <div aria-describedby="https://www.instagram.com/asana/" class="instagram w-8 h-8 bg-black rounded-[50%] flex flex-col justify-center items-center ">
+                            <a href="https://www.instagram.com/asana/" target="_blank" rel="noopener noreferrer" class="log fill-white ">
+                                <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" aria-labelledby="instagram-title-id" aria-hidden="false"><title id="instagram-title-id">Instagram</title><path d="M8.5 3.007c1.898 0 2.124.007 2.874.042 1.927.088 2.827 1.002 2.915 2.915.034.75.04.975.04 2.873 0 1.9-.006 2.124-.04 2.874-.088 1.91-.986 2.827-2.915 2.915-.75.034-.974.041-2.874.041-1.899 0-2.124-.007-2.874-.041-1.932-.089-2.827-1.007-2.915-2.916-.034-.75-.041-.974-.041-2.873 0-1.899.008-2.124.041-2.874.089-1.912.986-2.827 2.915-2.915.75-.034.975-.04 2.874-.04Zm0-1.281c-1.931 0-2.173.008-2.932.042-2.582.119-4.018 1.552-4.136 4.137-.035.759-.043 1-.043 2.932 0 1.931.008 2.173.042 2.932.119 2.582 1.552 4.018 4.137 4.136.759.035 1 .043 2.932.043 1.931 0 2.173-.008 2.932-.043 2.58-.118 4.019-1.551 4.136-4.136.035-.759.043-1.001.043-2.932 0-1.932-.008-2.173-.043-2.932-.116-2.58-1.55-4.018-4.136-4.136-.759-.035-1.001-.043-2.932-.043Zm0 3.46a3.652 3.652 0 1 0 0 7.303 3.652 3.652 0 0 0 0-7.304Zm0 6.021a2.37 2.37 0 1 1 0-4.74 2.37 2.37 0 0 1 0 4.74Zm3.796-7.02a.854.854 0 1 0 0 1.708.854.854 0 0 0 0-1.707Z"></path></svg>
+                            </a>
+                        </div>
+                        <div aria-describedby="https://www.facebook.com/asana" class="facebook w-8 h-8 bg-black rounded-[50%] flex flex-col justify-center items-center ">
+                            <a href="https://www.facebook.com/asana" target="_blank" rel="noopener noreferrer" class="log fill-white ">
+                                <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" aria-labelledby="facebook-title-id" aria-hidden="false"><title id="facebook-title-id">Facebook</title><path d="m11.405 6.429-.163 2.128H9.06v7.39H6.304v-7.39H4.833V6.429h1.47v-1.43c0-.63.016-1.6.474-2.202.482-.64 1.145-1.071 2.283-1.071 1.854 0 2.635.264 2.635.264l-.367 2.179s-.613-.178-1.184-.178c-.572 0-1.084.205-1.084.777v1.66h2.345Z"></path></svg>
+                            </a>
+                        </div>
+                        <div aria-describedby="https://www.youtube.com/channel/UC2BoogM0AqwOJyoSp1S4ClQ" class="youtube w-8 h-8 bg-black rounded-[50%] flex flex-col justify-center items-center ">
+                            <a href="https://www.youtube.com/channel/UC2BoogM0AqwOJyoSp1S4ClQ" target="_blank" rel="noopener noreferrer" class="log fill-white ">
+                                <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" aria-labelledby="youtube-title-id" aria-hidden="false"><title id="youtube-title-id">Youtube</title><path d="M8.495 3.503s-4.764 0-5.96.311A1.97 1.97 0 0 0 1.19 5.17C.879 6.365.879 8.84.879 8.84s0 2.486.31 3.663a1.94 1.94 0 0 0 1.347 1.346c1.205.32 5.96.32 5.96.32s4.772 0 5.968-.31a1.894 1.894 0 0 0 1.337-1.347c.32-1.186.32-3.662.32-3.662s.01-2.486-.32-3.681a1.882 1.882 0 0 0-1.337-1.337c-1.196-.33-5.969-.33-5.969-.33ZM6.98 6.553l3.964 2.288-3.964 2.279V6.554Z"></path></svg>
+                            </a>
+                        </div>
+                    
+                    </div>
+
+                    <div class="download flex">
+                        <div class="appstore w-[135px] h-[40px]">
+                            <a href="https://itunes.apple.com/us/app/asana-mobile/id489969512?mt=8">
+                                <img src="../assets/img/Download_App_Store_Badge_US.svg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="playstore w-[135px] h-[40px]">
+                            <a href="https://play.google.com/store/apps/details?id=com.asana.app&referrer=">
+                                <img src="../assets/img/Google_Play_EN.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
